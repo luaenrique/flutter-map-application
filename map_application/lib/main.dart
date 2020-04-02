@@ -62,14 +62,14 @@ class MapSampleState extends State<MapSample> {
 
    Future<List<Place>> _fetchPlaces() async {
 
-    final jobsListAPIUrl = 'http://736f462f.ngrok.io/places/list';
-        final response = await http.get(jobsListAPIUrl);
+    final placesListAPIUrl = 'http://736f462f.ngrok.io/places/list';
+        final response = await http.get(placesListAPIUrl);
 
         if (response.statusCode == 200) {
           List jsonResponse = json.decode(response.body);
           return jsonResponse.map((place) => new Place.fromJson(place)).toList();
         } else {
-          throw Exception('Failed to load jobs from API');
+          throw Exception('Failed to load places from API');
         }
   }
 
