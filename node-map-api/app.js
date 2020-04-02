@@ -12,5 +12,10 @@ app.get('/', (req, res) => {
 });
 
 
+//DB connection
+mongoose.connect(process.env.DB_CONNECTION,   
+    { useNewUrlParser: true, useUnifiedTopology: true }, () => {
+})
+
 //
 app.listen(3000);
