@@ -62,7 +62,7 @@ class MapSampleState extends State<MapSample> {
 
    Future<List<Place>> _fetchPlaces() async {
 
-    final placesListAPIUrl = 'http://736f462f.ngrok.io/places/list';
+    final placesListAPIUrl = '127.0.0.1:3000/places/list';
         final response = await http.get(placesListAPIUrl);
 
         if (response.statusCode == 200) {
